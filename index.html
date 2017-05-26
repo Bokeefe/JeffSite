@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script
+  src="http://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+    <title>Vincent's Expert Cleaners</title>
+    <style>
+    body{
+        background-color: white;
+    }
+    div{
+        margin-left: 10%;
+        width:80%;
+
+
+    }
+    div > p > img {
+         height:80vh;
+         width:auto;
+    }
+    p{
+        text-align: center
+    }
+    #first{
+
+        animation: firstFadeIn 5s;
+
+    }
+    #second{
+
+        display:none;
+
+    }
+    #third{
+
+        display:none;
+        animation: thirdFadeIn 5s;
+
+    }
+	#second{display:none; margin-top: 10%;}
+	#broom {
+		margin-left: -200px;
+	    position :relative;
+	    -webkit-animation: sweep 10s; /* Safari 4.0 - 8.0 */
+	    animation: sweep 10s;
+	}
+	#face {
+		margin-left: -80px;
+		position :relative;
+	    -webkit-animation: leftright 10s; /* Safari 4.0 - 8.0 */
+	    animation: leftright 10s;
+	}
+
+	@media screen and (max-width: 480px) {
+		#first{
+			width: 100%;
+			height: auto;
+		}
+		#second {
+			height: 60%;
+		}
+		#third {
+			width: 100%;
+			height: auto;
+		}
+
+
+	}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes sweep {
+    0%   {left: 0%;opacity: 0;}
+    10% {transform: rotate(20deg);}
+    20% {transform: rotate(-20deg);opacity: 1;}
+    30% {transform: rotate(20deg);}
+    40% {transform: rotate(-20deg);}
+    50% {transform: rotate(20deg);}
+    60% {transform: rotate(-20deg);}
+    70% {transform: rotate(20deg);}
+    80% {transform: rotate(-20deg); opacity: 1;}
+    90% {transform: rotate(20deg);}
+    100% {left: 100%; opacity: 0;}
+}
+
+@-webkit-keyframes leftright {
+    0%   {left: 0%; opacity: 0;}
+    20%   {opacity: 1;}
+    80%   {opacity: 1;}
+    100% {left: 100%; opacity: 0;}
+}
+
+@-webkit-keyframes firstFadeIn {
+	0% { opacity: 0; }
+    70%   { opacity: 1; }
+    100% { opacity: 0; }
+}
+@-webkit-keyframes thirdFadeIn {
+	0% { opacity: 0; }
+    100%   { opacity: 1; } 
+}
+
+/* Standard syntax */
+@keyframes sweep {
+    0%   {left: 0%;opacity: 0;}
+    10% {transform: rotate(20deg);}
+    20% {transform: rotate(-20deg);opacity: 1;}
+    30% {transform: rotate(20deg);}
+    40% {transform: rotate(-20deg);}
+    50% {transform: rotate(20deg);}
+    60% {transform: rotate(-20deg);}
+    70% {transform: rotate(20deg);}
+    80% {transform: rotate(-20deg); opacity: 1;}
+    90% {transform: rotate(20deg);}
+    100% {left: 100%; opacity: 0;}
+}
+
+@keyframes leftright {
+    0%   {left: 0%; opacity: 0;}
+    20%   {opacity: 1;}
+    80%   {opacity: 1;}
+    100% {left: 100%; opacity: 0;}
+}
+
+@keyframes firstFadeIn {
+	0% { opacity: 0; }
+    70%   { opacity: 1; }
+    100% { opacity: 0; }
+}
+@keyframes thirdFadeIn {
+	0% { opacity: 0; }
+    100%   { opacity: 1; } 
+}
+</style>
+</head>
+<body>
+	<div id='second'>
+		<img src="broom.png" alt="" id='broom'>
+		<img src="face.png" alt="" id='face'>
+	</div>
+    <div>
+        <p>
+			<img src="1st.jpg" id="first" alt="">
+			<img src="3rd.jpg" id="third" alt="">
+        </p>
+    </div>
+<script>
+$(document).ready(function(){
+
+	setTimeout(function(){ doThis(); }, 5000);
+	setTimeout(function(){ doThat(); }, 15000);
+
+	function doThis (){
+		$('#second').show();
+		$('#first').hide();
+	}
+	function doThat (){
+		$('#second').hide();
+		$('#third').show();
+	}
+
+});
+</script>
+
+</body>
+
+</html>
